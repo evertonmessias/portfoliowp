@@ -1,0 +1,101 @@
+M1A2 Instalação no Linux
+AxceOD92FYQ
+
+M1A2 Instalação no Windows
+Kjbcljdz4rI
+
+M1A3 Conhecendo o Ambiente
+ic4ama6i6Mg
+
+M1A4 Posts
+1INnf39v7Ow
+
+M1A5   Páginas
+kTAKiMR0gy4
+
+M1A6 Posts Avançados
+SjVRrudbg0A
+
+M1A7 Mídia
+K4AwcyIEGbI
+
+M1A8 Outros Conteúdos
+ksfp038rr40
+
+M1A9 Editos Gutenberg
+E3gBaUgNvtw
+
+M2A1 Gerenciador de Temas
+mEWnQhvkex4
+
+M2A2 Menus
+f-5HRDufZSM
+
+M2A3 Plugins
+SjvGfezdgWY
+
+M2A4 Editores Especiais
+xrlBhuHLUIU
+
+M2A5 Ferramentas
+uzw6kiKYsVg
+
+M3A1 Desenvolver Temas
+VNQuos2IJ0I
+
+M3A2 Primeiro Tema
+oD9Vc882nfs
+
+M3A3 Actions e Filters
+Fe46GUAcMCc
+
+M3A4 The Loop
+I5UIDxQ1a70
+
+M3A5 Template
+sBFXVIuD8JI
+
+M3A6 Personalizar
+9u02qtcSTAs
+
+M3A7 Lógioca Hierárquica
+ETwl_jlQoSM
+
+M3A8 Outros Recursos
+H2QiGMVYlPg
+
+M4A1 Introdução aos Plugins
+BoX1zgRF-mE
+
+M4A2 Reconhecer
+3PuQQIHWyhc
+
+M4A3 Hooks
+0yDaXzQ3sOo
+
+M4A4 Menus
+uECbKudLB9w
+
+M4A5 Guardando Conf
+PRUcEw9N35s
+
+M4A6 Custom Posts e Taxonomias
+ndXgyUFrss0
+
+M4A7 Metabox
+Bp9UapgmaN0
+
+M4A8 Acesso ao Banco de dados
+St8oGY9ksqY
+
+M5A1 Introdução
+aSPgjcHyGGI
+
+M5A2 Atualização e Backup
+L2gq9jVhFL4
+
+M5A3 Comandos sp cli
+fR4x_sTRrjg
+
+M5A4 Multisite
+xAF8GAfH1iI
