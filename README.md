@@ -1,2 +1,2 @@
-# portfoliowp
-Portfolio em WP
+# cwba
+Curso de Wordpress do Básico ao Avançado
