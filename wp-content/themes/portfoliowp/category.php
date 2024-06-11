@@ -1,10 +1,11 @@
-<?php if (!is_user_logged_in()) {
-	$url = get_home_url() . '/wp-admin';
-	wp_redirect($url);
-	exit();
-} else {
+<?php //if (!is_user_logged_in()) {
+	//$url = get_home_url() . '/wp-admin';
+	//wp_redirect($url);
+	//exit();
+//} else {
 	get_header();
-} ?>
+//} 
+?>
 
 <?php
 if (url_active()[2] == "") {
@@ -21,7 +22,7 @@ $category = get_category_by_slug($base) ?>
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Categoria: <?php echo $category->name ?></h2>
+                <h2>Categoria das Aulas: <?php echo $category->name ?></h2>
                 <ol>
                     <li><a href="/">home</a></li>
                     <?php echo $lli; ?>
@@ -43,7 +44,7 @@ $category = get_category_by_slug($base) ?>
                         </div>
                         <br>
                         <div id="<?php echo $category->slug; ?>" class="row grid-aulas portfolio-container">
-                            <h3 class="title-cat"><?php echo $category->name ." - ". $category->description; ?></h3>
+                            <h3 class="title-cat"><?php echo $category->name; ?></h3>
                             <?php
                             $args = array(
                                 'post_type' => 'post',

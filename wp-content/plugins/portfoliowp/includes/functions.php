@@ -153,7 +153,7 @@ add_action('list_access', 'list_access');
 //************* Login_redirect
 function admin_default_page()
 {
-	return '/aulas';
+	return '/wp-admin';
 }
 add_filter('login_redirect', 'admin_default_page');
 

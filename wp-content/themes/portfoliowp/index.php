@@ -1,10 +1,11 @@
-<?php if (!is_user_logged_in()) {
-	$url = get_home_url() . '/wp-admin';
-	wp_redirect($url);
-	exit();
-} else {
+<?php //if (!is_user_logged_in()) {
+	//$url = get_home_url() . '/wp-admin';
+	//wp_redirect($url);
+	//exit();
+//} else {
 	get_header();
-} ?>
+//} 
+?>
 
 <main id="main" class="post" data-aos="fade-up">
   <!-- ======= Breadcrumbs ======= -->

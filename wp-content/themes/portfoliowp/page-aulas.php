@@ -1,14 +1,10 @@
 <?php 
-if (!is_user_logged_in()) {
-	$url = get_home_url() . '/wp-admin';
-	wp_redirect($url);
-	exit();
-} else {
-	get_header();
-	if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "177.55.129.61") {
-		registerdb2(wp_get_current_user()->user_login,$_SERVER['REMOTE_ADDR']);
-	}
-}
+
+get_header();
+//if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "177.55.129.170") {
+//	registerdb2(wp_get_current_user()->user_login,$_SERVER['REMOTE_ADDR']);
+//}
+
 ?>
 
 
@@ -47,7 +43,7 @@ if (!is_user_logged_in()) {
 						<br>
 						<?php foreach ($categories as $category) { ?>
 							<div id="<?php echo $category->slug; ?>" class="row grid-aulas portfolio-container">
-								<h3 class="title-cat"><?php echo $category->name . " - " . $category->description; ?></h3>
+								<h3 class="title-cat"><?php echo $category->name; ?></h3>
 								<?php
 								$args = array(
 									'post_type' => 'post',
