@@ -1172,6 +1172,7 @@ section {
 }
 .contact .php-email-form label {
   width: 100%;
+  font-weight: bold;
 }
 .contact .php-email-form input {
   padding: 10px 15px;  
