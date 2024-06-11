@@ -66,6 +66,19 @@ function portal_page_html()
 			</label>
 
 
+			<br><br><!-- Trabalhos ********************************** -->
+			<hr>
+
+			<label>
+				<h3 class="title">Trabalhos: </h3>
+				<?php
+				$portal44 = get_option('portal_input_44'); 
+				wp_editor($portal44, 'portal_job_box', array('textarea_name' => 'portal_input_44'));
+				?>
+				
+			</label>
+
+
 			<br><br><!-- Whatsapp *************************************** -->
 			<hr>
 			<label>
@@ -135,6 +148,15 @@ function portal_settings4()
 	register_setting('portal_option_grupo', 'portal_input_4');
 }
 add_action('admin_init', 'portal_settings4');
+
+
+function portal_settings44()
+{
+	add_option('portal_input_44');
+	register_setting('portal_option_grupo', 'portal_input_44');
+}
+add_action('admin_init', 'portal_settings44');
+
 
 function portal_settings5()
 {

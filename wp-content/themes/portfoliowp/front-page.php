@@ -36,6 +36,21 @@ if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "1
 	</section><!-- End About Section -->
 
 
+		<!-- ======= Jobs Section ======= -->
+		<section id="trabalhos" class="about">
+		<div class="container" data-aos="fade-up">
+		<div class="section-title">
+				<h2>TRABALHOS</h2>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<?php echo get_option('portal_input_44'); ?>
+				</div>				
+			</div>
+		</div>
+	</section><!-- End About Section -->
+
+
 	<!-- ======= Contact Section ======= -->
 	<section id="contato" class="contact">
 	<div class="container" data-aos="fade-up">

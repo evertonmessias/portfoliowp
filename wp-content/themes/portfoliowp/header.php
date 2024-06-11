@@ -47,6 +47,7 @@
 				<ul>
 					<li ><a class="nav-link scrollto <?php if (is_front_page()) echo 'active'; ?>" href="/#hero">Inicio</a></li>
 					<li><a class="nav-link scrollto" href="/#sobre">Sobre</a></li>
+					<li><a class="nav-link scrollto" href="/#trabalhos">Trabalhos</a></li>
 					<li><a class="nav-link scrollto" href="/#contato">Contato</a></li>					
 					<li><a class="nav-link scrollto" href="/aulas">Aulas</a></li>
 				</ul>

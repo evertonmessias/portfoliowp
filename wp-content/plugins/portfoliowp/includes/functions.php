@@ -73,7 +73,7 @@ add_action('admin_menu', 'wd_admin_menu_rename');
 // ***************** Add in Menu
 function menu_portfoliowp()
 {
-	add_menu_page('portfoliowp', 'portfoliowp', 'edit_posts', 'portfoliowp', 'function_about', 'dashicons-welcome-view-site', 1);
+	add_menu_page('portfoliowp', 'Portfoliowp', 'edit_posts', 'portfoliowp', 'function_about', 'dashicons-welcome-view-site', 1);
 	add_submenu_page('portfoliowp', 'Acessos','Acessos', 'edit_posts', 'acess', 'function_access', 1);
 	add_submenu_page('portfoliowp', 'Login','Login', 'edit_posts', 'login', 'function_login', 2);
 }

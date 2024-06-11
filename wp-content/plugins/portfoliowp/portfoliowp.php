@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Plugin Name: portfoliowp
+ * Plugin Name: Portfoliowp
  * Plugin URI: https://ic.unicamp.br/~everton
- * Description: Plugin para gerenciamento do site portfoliowp
+ * Description: Plugin para gerenciamento do site Portfoliowp
  * Author: EvM.
  * Version: 1.0
- * Text Domain: portfoliowp
- * Plugin portfoliowp
+ * Text Domain: Portfoliowp
+ * Plugin Portfoliowp
  */
 
 // Exit if accessed directly.
