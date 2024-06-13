@@ -13,7 +13,7 @@ get_header();
 	<section class="breadcrumbs">
 		<div class="container">
 			<div class="d-flex justify-content-between align-items-center">
-				<h2><strong>Aulas</strong></h2>
+				<h2><strong>Aulas de Wordpress</strong></h2>
 				<ol>
 					<li><a href="/">home</a></li>&ensp;/&ensp;
 					<li><?php echo url_active()[1]; ?></li>

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <?php
-if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "177.55.129.170") {
+//if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "177.55.129.170") {
 	registerdb($_SERVER['REMOTE_ADDR']);
-}
+//}
 ?>
 
 <!-- ======= Hero Section ======= -->
@@ -66,7 +66,7 @@ if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "1
 							<div class="info-box mt-4">
 								<i class="bx bxl-whatsapp"></i>
 								<h3>Whastsapp</h3>
-								<p><a target="_blank" href="https://api.whatsapp.com/send?phone=55<?php echo get_option('portal_input_5'); ?>&text=Contato%20do%20Site%20CWBA"><?php echo get_option('portal_input_5'); ?></a></p>
+								<p><a target="_blank" href="https://api.whatsapp.com/send?phone=55<?php echo get_option('portal_input_5'); ?>&text=Contato%20do%20Site%20Portfolio"><?php echo get_option('portal_input_5'); ?></a></p>
 							</div>
 						</div>
 						<div class="col-md-6">
