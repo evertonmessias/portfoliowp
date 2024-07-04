@@ -37,7 +37,7 @@ if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "1
 
 
 		<!-- ======= Jobs Section ======= -->
-		<section id="trabalhos" class="about">
+		<section id="trabalhos" class="about job">
 		<div class="container" data-aos="fade-up">
 		<div class="section-title">
 				<h2>TRABALHOS</h2>
@@ -77,9 +77,11 @@ if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "1
 							</div>
 						</div>
 					</div>
+					<!--
 					<div class="php-email-form">
-						<?php echo do_shortcode('[contact-form-7 id="130" title="Contato"]'); ?>
+						<?php //echo do_shortcode('[contact-form-7 id="130" title="Contato"]'); ?>
 					</div>
+					-->
 				</div>
 
 			</div>
@@ -88,4 +90,5 @@ if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "1
 	</section><!-- End Contact Section -->
 
 </main><!-- End #main -->
+<br><br>
 <?php get_footer(); ?>

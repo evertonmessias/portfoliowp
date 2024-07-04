@@ -549,6 +549,9 @@ section {
   position: relative;
   z-index: 10;
 }
+.about.job{
+  background: #f6f6f6;
+}
 .about .content {
   padding: 30px 30px 30px 0;
 }
