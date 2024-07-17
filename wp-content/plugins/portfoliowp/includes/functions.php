@@ -3,27 +3,21 @@
 // ***************** Add style & script for Admin
 function style_and_script()
 {
-?>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
-
-	<link href="<?php echo SITEPATH; ?>assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-
-<?php
-	wp_enqueue_style('stilos', '/wp-content/plugins/portfoliowp/assets/portfoliowp.css');
-	wp_enqueue_script('scripts', '/wp-content/plugins/portfoliowp/assets/portfoliowp.js');
+	wp_enqueue_style("stilos1", "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css");
+	wp_enqueue_style("stilos2", "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css");
+	wp_enqueue_style("stilos3", "https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css");
+	wp_enqueue_style("stilo4s", "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css");
+	wp_enqueue_style("stilos5", "https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css");
+	wp_enqueue_style("stilos6", "/wp-content/plugins/portfoliowp/assets/portfoliowp.css");
+	wp_enqueue_script("scripts1", "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js");
+	wp_enqueue_script("scripts2", "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js");
+	wp_enqueue_script("scripts3", "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js");
+	wp_enqueue_script("scripts4", "https://code.jquery.com/jquery-3.5.1.js");
+	wp_enqueue_script("scripts5", "https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js");
+	wp_enqueue_script("scripts6", "https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js");
+	wp_enqueue_script("scripts7", "/wp-content/plugins/portfoliowp/assets/portfoliowp.js");
 }
-add_action('admin_enqueue_scripts', 'style_and_script');
+add_action("admin_enqueue_scripts", "style_and_script");
 
 
 //***************** Add General Configuration Roles
