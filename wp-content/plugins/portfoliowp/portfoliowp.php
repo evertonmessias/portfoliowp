@@ -34,11 +34,11 @@ function add_db_access()
         dbDelta($sql);
     }
     
-    //remove_role('contributor');
-    //remove_role('customer');
-    //remove_role('author');
-    //remove_role( 'shop_manager' );
-    //add_role( 'aluno', 'Aluno', array( 'read' => true, 'level_0' => true ) );
+    remove_role('contributor');
+    remove_role('customer');
+    remove_role('author');
+    remove_role( 'shop_manager' );
+    add_role( 'aluno', 'Aluno', array( 'read' => true, 'level_0' => true ) );
     flush_rewrite_rules();
     
 }

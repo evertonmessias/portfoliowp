@@ -7,6 +7,8 @@ define('SITEPATH', '/wp-content/themes/portfoliowp/');
 //************* Admin Login Logo
 function tf_wp_admin_login_logo()
 { ?>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
   <style type="text/css">
 
     #login {
@@ -27,6 +29,18 @@ function tf_wp_admin_login_logo()
 
     .language-switcher, #login .galogin-powered {
       display: none;
+    }
+    .request_registration{
+      cursor: pointer;
+      display: block;
+      position: fixed;
+      min-height: 32px;
+      line-height: 2.30769231;
+      padding: 0px 10px 0px 10px !important;
+      font-size: 13px;
+    }
+    .galogin-or, .forgetmenot{
+      display: none !important;
     }
   </style>
 
@@ -49,6 +63,16 @@ function tf_wp_admin_login_logo_title($headertext)
   return $headertext;
 }
 add_filter('login_headertext', 'tf_wp_admin_login_logo_title');
+
+//************* Admin Login Register
+function request_registration(){
+  ?>
+  <a target="_blank" href="https://api.whatsapp.com/send?phone=55<?php echo get_option('portal_input_5'); ?>&text=Contato%20do%20Site%20Portfolio">
+    <button type="button" class="btn btn-success request_registration">Solicitar Acesso</button></a>
+  <?php
+}
+add_action( 'login_form', 'request_registration' );
+
 
 //************* URL from breadcrumbs
 function url_active()

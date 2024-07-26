@@ -1,10 +1,14 @@
-<?php 
-
-get_header();
-//if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "177.55.129.170") {
-//	registerdb2(wp_get_current_user()->user_login,$_SERVER['REMOTE_ADDR']);
-//}
-
+<?php
+if (!is_user_logged_in()) {
+	$url = get_home_url() . '/wp-admin';
+	wp_redirect($url);
+	exit();
+} else {
+	get_header();
+	if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "177.55.129.170") {
+		registerdb2(wp_get_current_user()->user_login, $_SERVER['REMOTE_ADDR']);
+	}
+}
 ?>
 
 
@@ -59,12 +63,12 @@ get_header();
 									<div class="aulas-item col-lg-12 portfolio-item">
 										<div class="row">
 											<div class="col-lg-12">
-												<?php if($vid != ""){ ?>
-												<a href="<?php echo get_the_permalink() ?>" class="details-link" title="Link">
-													<?php echo $post->post_title; ?>
-												</a>
-												<a href="https://youtu.be/<?php echo $vid; ?>" class="venobox ico-play" title="Play" data-vbtype="video" data-autoplay="true"><i class="ri-video-line"></i></a>
-												<?php }else{ ?>
+												<?php if ($vid != "") { ?>
+													<a href="<?php echo get_the_permalink() ?>" class="details-link" title="Link">
+														<?php echo $post->post_title; ?>
+													</a>
+													<a href="https://youtu.be/<?php echo $vid; ?>" class="venobox ico-play" title="Play" data-vbtype="video" data-autoplay="true"><i class="ri-video-line"></i></a>
+												<?php } else { ?>
 													<?php echo $post->post_title; ?>
 												<?php } ?>
 											</div>
