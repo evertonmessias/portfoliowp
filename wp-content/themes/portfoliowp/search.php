@@ -1,12 +1,4 @@
-<?php 
-if (!is_user_logged_in()) {
-	$url = get_home_url() . '/wp-admin';
-	wp_redirect($url);
-	exit();
-} else {
-	get_header();
-} 
-?>
+<?php get_header(); ?>
 
 <?php $s = get_search_query(); ?>
 
@@ -38,6 +30,7 @@ if (!is_user_logged_in()) {
                             $loop = new WP_Query($args);
                             $result = array();
                             foreach ($loop->posts as $post) {
+                                $vid = get_post_meta($post->ID, 'post_video', true);
                                 $result[] = $post;
                             ?>
                                 <div class="aulas-item col-lg-12 portfolio-item">
@@ -47,14 +40,17 @@ if (!is_user_logged_in()) {
                                             <a href="<?php echo get_the_permalink() ?>" class="details-link" title="Link">
                                                 <?php echo $post->post_title; ?>
                                             </a>
-                                            <a href="<?php echo get_post_meta($post->ID, 'post_video', true); ?>" class="venobox ico-play" title="Play" data-vbtype="video" data-autoplay="true"><i class="ri-video-line"></i></a>
+                                            <?php
+                                            if (is_user_logged_in()) { ?>
+                                                <a href="https://youtu.be/<?php echo $vid; ?>" class="venobox ico-play" title="Play" data-vbtype="video" data-autoplay="true"><i class="ri-video-line"></i></a>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
                             <?php $x++;
                             }
-                            wp_reset_postdata(); 
-                            if(count($result) == 0)echo '<div class="aulas-item col-lg-12 portfolio-item"><div class="row"><div class="col-lg-12">Nada encontrado !</div></div></div>';
+                            wp_reset_postdata();
+                            if (count($result) == 0) echo '<div class="aulas-item col-lg-12 portfolio-item"><div class="row"><div class="col-lg-12">Nada encontrado !</div></div></div>';
                             ?>
                         </div>
                     </div>

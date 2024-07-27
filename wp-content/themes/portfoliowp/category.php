@@ -1,20 +1,12 @@
-<?php 
-if (!is_user_logged_in()) {
-	$url = get_home_url() . '/wp-admin';
-	wp_redirect($url);
-	exit();
-} else {
-	get_header();
-} 
-?>
+<?php get_header(); ?>
 
 <?php
 if (url_active()[2] == "") {
     $base = url_active()[1];
-    $lli = "&ensp;/&ensp;<li>".url_active()[1]."</li>";
+    $lli = "&ensp;/&ensp;<li>" . url_active()[1] . "</li>";
 } else {
     $base = url_active()[2];
-    $lli = "&ensp;/&ensp;<li><a href='/".url_active()[1]."'>".url_active()[1]."</a></li>&ensp;/&ensp;<li>".url_active()[2]."</li>";
+    $lli = "&ensp;/&ensp;<li><a href='/" . url_active()[1] . "'>" . url_active()[1] . "</a></li>&ensp;/&ensp;<li>" . url_active()[2] . "</li>";
 }
 $category = get_category_by_slug($base) ?>
 
@@ -23,7 +15,7 @@ $category = get_category_by_slug($base) ?>
     <section class="breadcrumbs">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Categoria das Aulas: <?php echo $category->name ?></h2>
+                <h2>Categoria: Módulo <?php echo $category->name ?></h2>
                 <ol>
                     <li><a href="/">home</a></li>
                     <?php echo $lli; ?>
@@ -45,7 +37,7 @@ $category = get_category_by_slug($base) ?>
                         </div>
                         <br>
                         <div id="<?php echo $category->slug; ?>" class="row grid-aulas portfolio-container">
-                            <h3 class="title-cat"><?php echo $category->name; ?></h3>
+                            <h3 class="title-cat">Módulo <?php echo $category->name; ?></h3>
                             <?php
                             $args = array(
                                 'post_type' => 'post',
@@ -61,12 +53,15 @@ $category = get_category_by_slug($base) ?>
                                 <div class="aulas-item col-lg-12 portfolio-item">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <?php if($vid != ""){ ?>
-                                            <a href="<?php echo get_the_permalink() ?>" class="details-link" title="Link">
-                                                <?php echo $post->post_title; ?>
-                                            </a>
-                                            <a href="https://youtu.be/<?php echo $vid; ?>" class="venobox ico-play" title="Play" data-vbtype="video" data-autoplay="true"><i class="ri-video-line"></i></a>
-                                            <?php }else{ ?>
+                                            <?php if ($vid != "") { ?>
+                                                <a href="<?php echo get_the_permalink() ?>" class="details-link" title="Link">
+                                                    <?php echo $post->post_title; ?>
+                                                </a>
+                                                <?php
+                                                if (is_user_logged_in()) { ?>
+                                                    <a href="https://youtu.be/<?php echo $vid; ?>" class="venobox ico-play" title="Play" data-vbtype="video" data-autoplay="true"><i class="ri-video-line"></i></a>
+                                                <?php }
+                                            } else { ?>
                                                 <?php echo $post->post_title; ?>
                                             <?php } ?>
                                         </div>

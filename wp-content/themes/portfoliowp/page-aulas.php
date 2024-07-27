@@ -1,16 +1,9 @@
 <?php
-if (!is_user_logged_in()) {
-	$url = get_home_url() . '/wp-admin';
-	wp_redirect($url);
-	exit();
-} else {
-	get_header();
-	if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "177.55.129.170") {
-		registerdb2(wp_get_current_user()->user_login, $_SERVER['REMOTE_ADDR']);
-	}
+get_header();
+if (is_user_logged_in() && $_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "177.55.129.170") {
+	registerdb2(wp_get_current_user()->user_login, $_SERVER['REMOTE_ADDR']);
 }
 ?>
-
 
 <main id="main" class="post" data-aos="fade-up">
 	<!-- ======= Breadcrumbs ======= -->
@@ -47,7 +40,7 @@ if (!is_user_logged_in()) {
 						<br>
 						<?php foreach ($categories as $category) { ?>
 							<div id="<?php echo $category->slug; ?>" class="row grid-aulas portfolio-container">
-								<h3 class="title-cat"><?php echo $category->name; ?></h3>
+								<h3 class="title-cat">Módulo <?php echo $category->name; ?></h3>
 								<?php
 								$args = array(
 									'post_type' => 'post',
@@ -67,8 +60,11 @@ if (!is_user_logged_in()) {
 													<a href="<?php echo get_the_permalink() ?>" class="details-link" title="Link">
 														<?php echo $post->post_title; ?>
 													</a>
-													<a href="https://youtu.be/<?php echo $vid; ?>" class="venobox ico-play" title="Play" data-vbtype="video" data-autoplay="true"><i class="ri-video-line"></i></a>
-												<?php } else { ?>
+													<?php
+													if (is_user_logged_in()) { ?>
+														<a href="https://youtu.be/<?php echo $vid; ?>" class="venobox ico-play" title="Play" data-vbtype="video" data-autoplay="true"><i class="ri-video-line"></i></a>
+													<?php }
+												} else { ?>
 													<?php echo $post->post_title; ?>
 												<?php } ?>
 											</div>

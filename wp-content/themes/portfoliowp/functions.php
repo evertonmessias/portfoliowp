@@ -5,7 +5,7 @@
 define('SITEPATH', '/wp-content/themes/portfoliowp/');
 
 //************* Admin Login Logo
-function tf_wp_admin_login_logo()
+function admin_login_logo()
 { ?>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 
@@ -13,7 +13,7 @@ function tf_wp_admin_login_logo()
 
     #login {
       background: #fff;
-      margin-top: 100px !important;      
+      margin-top: 20px !important;      
       padding: 0% 0 0 !important;
       padding: 20px !important;
       box-shadow: 0 0 15px rgb(0, 0, 0, 0.8) !important;
@@ -27,42 +27,41 @@ function tf_wp_admin_login_logo()
       height: 80px;
     }
 
-    .language-switcher, #login .galogin-powered {
-      display: none;
+    .language-switcher, #login .galogin-powered, #login .galogin-or, #login .forgetmenot {
+      display: none !important;
     }
-    .request_registration{
+    
+    #login .request_registration{
       cursor: pointer;
       display: block;
-      position: fixed;
+      position: absolute;
       min-height: 32px;
       line-height: 2.30769231;
       padding: 0px 10px 0px 10px !important;
       font-size: 13px;
     }
-    .galogin-or, .forgetmenot{
-      display: none !important;
-    }
+
   </style>
 
 <?php }
-add_action('login_enqueue_scripts', 'tf_wp_admin_login_logo');
+add_action('login_enqueue_scripts', 'admin_login_logo');
 
 
 //************* Admin Login Logo Link URL
-function tf_wp_admin_login_logo_url()
+function admin_login_logo_url()
 {
   return home_url();
 }
-add_filter('login_headerurl', 'tf_wp_admin_login_logo_url');
+add_filter('login_headerurl', 'admin_login_logo_url');
 
 
 //************* Admin Login Logo's Title
-function tf_wp_admin_login_logo_title($headertext)
+function admin_login_logo_title($headertext)
 {
   $headertext = esc_html__(get_bloginfo('name'), 'plugin-textdomain');
   return $headertext;
 }
-add_filter('login_headertext', 'tf_wp_admin_login_logo_title');
+add_filter('login_headertext', 'admin_login_logo_title');
 
 //************* Admin Login Register
 function request_registration(){
