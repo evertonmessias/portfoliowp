@@ -386,7 +386,7 @@ filter: grayscale(100%);
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 1px;
-  width: 20em;  
+  width:fit-content;  
   padding: 10px 30px;
   border-radius: 4px;
   transition: 0.5s;
