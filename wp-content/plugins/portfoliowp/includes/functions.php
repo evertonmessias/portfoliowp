@@ -1,5 +1,8 @@
 <?php
 
+define("IP_UNICAMP", "143.106.16.153");
+define("IP_CASA", "177.55.129.170");
+
 // ***************** Add style & script for Admin
 function style_and_script()
 {
@@ -68,26 +71,26 @@ add_action('admin_menu', 'wd_admin_menu_rename');
 function menu_portfoliowp()
 {
 	add_menu_page('portfoliowp', 'Portfoliowp', 'edit_posts', 'portfoliowp', 'function_about', 'dashicons-welcome-view-site', 1);
-	add_submenu_page('portfoliowp', 'Acessos','Acessos', 'edit_posts', 'acess', 'function_access', 1);
-	add_submenu_page('portfoliowp', 'Login','Login', 'edit_posts', 'login', 'function_login', 2);
+	add_submenu_page('portfoliowp', 'Acessos', 'Acessos', 'edit_posts', 'acess', 'function_access', 1);
+	add_submenu_page('portfoliowp', 'Login', 'Login', 'edit_posts', 'login', 'function_login', 2);
 }
 add_action('admin_menu', 'menu_portfoliowp');
 
-// ***************** Add About
+// ***************** Add Page About
 function function_about()
 {
 	include ABSPATH . '/wp-content/plugins/portfoliowp/includes/about.php';
 }
 add_action('function_about', 'function_about');
 
-// ***************** Add About
+// ***************** Add Page Access
 function function_access()
 {
 	include ABSPATH . '/wp-content/plugins/portfoliowp/includes/access.php';
 }
 add_action('function_access', 'function_access');
 
-// ***************** Add About
+// ***************** Add Page Login
 function function_login()
 {
 	include ABSPATH . '/wp-content/plugins/portfoliowp/includes/login.php';
@@ -104,30 +107,39 @@ add_action('admin_enqueue_scripts', 'load_media_files');
 //************* Add thumbnails
 //add_theme_support('post-thumbnails', array('post'));
 
-
 //************* Data Base
-function registerdb($ip) // register in db
+function registerdb($ip, $url) // register in db
 {
-	global $wpdb;
-	$table_name = $wpdb->prefix . 'access';
-	$resp = $wpdb->insert($table_name, array('ipadress' => $ip, 'time' => current_time('mysql')));
-	if ($resp == 1) {
-		return "register db: SUCESS";
-	} else {
-		return "register db: ERROR";
+	if ($ip != IP_UNICAMP && $ip != IP_CASA) {
+		if($url == NULL){
+			$url = "/";
+		}
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'access';
+		$resp = $wpdb->insert($table_name, array('ipadress' => $ip, 'url' => $url, 'time' => current_time('mysql')));
+		if ($resp == 1) {
+			return "register db: SUCESS";
+		} else {
+			return "register db: ERROR";
+		}
 	}
 }
 add_action('registerdb', 'registerdb');
 
-function registerdb2($user,$ip) // register in db
-{	
-	global $wpdb;
-	$table_name = $wpdb->prefix . 'login';
-	$resp = $wpdb->insert($table_name, array('user' => $user,'ipadress' => $ip, 'time' => current_time('mysql')));
-	if ($resp == 1) {
-		return "register db: SUCESS";
-	} else {
-		return "register db: ERROR";
+function registerdb2($user, $ip, $url) // register in db
+{
+	if (is_user_logged_in() && $ip != IP_UNICAMP && $ip != IP_CASA) {
+		if($url == NULL){
+			$url = "/";
+		}
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'login';
+		$resp = $wpdb->insert($table_name, array('user' => $user, 'ipadress' => $ip, 'url' => $url, 'time' => current_time('mysql')));
+		if ($resp == 1) {
+			return "register db: SUCESS";
+		} else {
+			return "register db: ERROR";
+		}
 	}
 }
 add_action('registerdb2', 'registerdb2');
@@ -146,8 +158,8 @@ add_action('list_access', 'list_access');
 
 //************* Login_redirect
 function admin_default_page()
-{
-	return '/aulas';
+{		
+		return '/aulas';
 }
 add_filter('login_redirect', 'admin_default_page');
 

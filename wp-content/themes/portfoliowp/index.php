@@ -1,10 +1,12 @@
 <?php
 if (!is_user_logged_in()) {
+  registerdb($_SERVER['REMOTE_ADDR'],$_SERVER['REDIRECT_URL']);
 	$url = get_home_url() . '/wp-admin';
 	wp_redirect($url);
 	exit();
 } else {
-	get_header();
+  get_header(); 
+  registerdb2(wp_get_current_user()->user_login, $_SERVER['REMOTE_ADDR'],$_SERVER['REDIRECT_URL']);
 }
 ?>
 

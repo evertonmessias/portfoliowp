@@ -5,6 +5,7 @@
             <tr>
                 <th>ID</th>
                 <th>IP</th>
+                <th>URL</th>
                 <th>Data</th>
             </tr>
         </thead>
@@ -18,7 +19,7 @@
             foreach ($lista as $item) {
                 $data = explode("-", explode(" ", $item->time)[0]);
                 $datahora = $data[2] . "/" . $data[1] . "/" . $data[0] . " , " . explode(" ", $item->time)[1];
-                echo "<tr><td>" . $item->id . "</td><td>" . $item->ipadress . "</td><td>" . $datahora . "</td></tr>";
+                echo "<tr><td>" . $item->id . "</td><td>" . $item->ipadress . "</td><td>" . $item->url . "</td><td>" . $datahora . "</td></tr>";
             }
             ?>
         </tbody>

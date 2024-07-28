@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+get_header();
+if (!is_user_logged_in()) {
+	registerdb($_SERVER['REMOTE_ADDR'], $_SERVER['REDIRECT_URL']);
+} else {
+	registerdb2(wp_get_current_user()->user_login, $_SERVER['REMOTE_ADDR'], $_SERVER['REDIRECT_URL']);
+}
+?>
 
 <main id="main" class="post" data-aos="fade-up">
     <!-- ======= Breadcrumbs ======= -->

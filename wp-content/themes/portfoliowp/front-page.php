@@ -1,7 +1,9 @@
-<?php get_header(); ?>
 <?php
-if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "177.55.129.170") {
-	registerdb($_SERVER['REMOTE_ADDR']);
+get_header();
+if (!is_user_logged_in()) {
+	registerdb($_SERVER['REMOTE_ADDR'], $_SERVER['REDIRECT_URL']);
+} else {
+	registerdb2(wp_get_current_user()->user_login, $_SERVER['REMOTE_ADDR'], $_SERVER['REDIRECT_URL']);
 }
 ?>
 
@@ -12,7 +14,7 @@ if ($_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "1
 		<div class="row">
 			<div class="col-lg-12">
 				<h2 class="center"><?php echo get_option('portal_input_3'); ?></h2>
-				<a href="/aulas" class="btn-get-started scrollto Center" title="Aulas de Programação de Plugins e Temas">Aulas de Wordpress</a>
+				<a href="/aulas" class="btn-get-started scrollto Center" title="Aulas de Programação de Plugins e Temas para Wordpress">Capacitação Wordpress</a>
 			</div>
 		</div>
 	</div>

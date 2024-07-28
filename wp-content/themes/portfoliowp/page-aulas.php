@@ -1,7 +1,9 @@
 <?php
 get_header();
-if (is_user_logged_in() && $_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERVER['REMOTE_ADDR'] != "177.55.129.170") {
-	registerdb2(wp_get_current_user()->user_login, $_SERVER['REMOTE_ADDR']);
+if (!is_user_logged_in()) {
+	registerdb($_SERVER['REMOTE_ADDR'], $_SERVER['REDIRECT_URL']);
+} else {
+	registerdb2(wp_get_current_user()->user_login, $_SERVER['REMOTE_ADDR'], $_SERVER['REDIRECT_URL']);
 }
 ?>
 
@@ -10,7 +12,7 @@ if (is_user_logged_in() && $_SERVER['REMOTE_ADDR'] != "143.106.16.153" && $_SERV
 	<section class="breadcrumbs">
 		<div class="container">
 			<div class="d-flex justify-content-between align-items-center">
-				<h2><strong>Aulas de Wordpress</strong></h2>
+				<h2><strong>Capacitação em Wordpress</strong></h2>
 				<ol>
 					<li><a href="/">home</a></li>&ensp;/&ensp;
 					<li><?php echo url_active()[1]; ?></li>
