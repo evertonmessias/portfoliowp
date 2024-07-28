@@ -157,11 +157,11 @@ add_action('list_access', 'list_access');
 
 
 //************* Login_redirect
-function admin_default_page()
+function redirect_after_login()
 {		
 		return '/aulas';
 }
-add_filter('login_redirect', 'admin_default_page');
+add_filter('login_redirect', 'redirect_after_login');
 
 
 //************* Hide admin bar for users
