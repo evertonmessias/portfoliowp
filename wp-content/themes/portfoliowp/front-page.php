@@ -14,7 +14,7 @@ if (!is_user_logged_in()) {
 		<div class="row">
 			<div class="col-lg-12">
 				<h2 class="center"><?php echo get_option('portal_input_3'); ?></h2>
-				<a href="/aulas" class="btn-get-started scrollto Center" title="Aulas de Programação de Plugins e Temas para Wordpress">Capacitação Wordpress</a>
+				<a href="/aulas" class="btn-get-started scrollto Center" title="Aulas de Programação de Plugins e Temas para Wordpress">Capacitação em Wordpress</a>
 			</div>
 		</div>
 	</div>
