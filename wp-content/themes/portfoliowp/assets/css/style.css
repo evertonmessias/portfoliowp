@@ -348,7 +348,7 @@ filter: grayscale(100%);
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 60vh;  
+  height: 80vh;  
   background-size: cover;
   position: relative;
   padding-top: 82px;
@@ -371,9 +371,11 @@ filter: grayscale(100%);
 }
 #hero h2 {
   color: #fff;
+  font-weight: 700;
   margin: 20px 0 0 0;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   letter-spacing: 6px;
+  text-shadow: 0.1em 0.1em #F00
 }
 #hero hr{
   background-color: #fff;
